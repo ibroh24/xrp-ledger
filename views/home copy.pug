@@ -1,0 +1,42 @@
+extends layout
+
+
+block content
+ .row
+    .col-sm-1
+    .col-sm-4
+        p.img
+            img(src='/images/xrp.jpeg' alt='login' class="image" style='width:200px; height:180px;')
+        h2 #{message}
+        a(href="/logout") Log out
+        
+        p.xrp A non-fungible token (NFT) is a special type of cryptographic token which represents something unique; non-fungible tokens are thus not mutually interchangeable. This is in contrast to eg. the native asset on the XRPL, XRP, where XRP can be sent and received without being uniquely (per token) identified. 
+        p.xrp This XRP project is used to confirm user transactions on blockchain ledger, with address, you got the response from XRP Ledger.
+        p.xrp Please copy this address: 
+        code.cd rf1BiGeXwwQoi8Z2ueFYTEXSwuJYfV2Jpn 
+        span.copy &#128203;
+        form.add(action="/home", method="post") 
+            
+            input(type="text" name="address" class="address" readonly placeholder="Enter Address")
+            button(type="submit" class="smt") Submit
+    .col-sm-1
+    .col-sm-6
+        if(info !== undefined)
+            form.bgblack
+                code {
+                    p.ledger Sequence: 
+                        span #{info.sequence}
+                    p.ledger Owner Count: 
+                        span #{info.ownerCount}
+                    p.ledger XRP Balance: 
+                        span #{info.xrpBalance}
+                    p.ledger Previous Initiated TransactionID: 
+                        span #{info.previousInitiatedTransactionID}
+                    p.ledger Previous Affecting TransactionID: 
+                        span #{info.previousAffectingTransactionID}
+                    p.ledger Previous Affecting Transaction LedgerVersion: 
+                        span #{info.previousAffectingTransactionLedgerVersion}
+                code }
+
+
+    script(src='/javascripts/copyscript.js')

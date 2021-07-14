@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+     form(action="/auth_login", method="post" class="ant-form ant-form-vertical") 
+       div.ant-row 
+       div.ant-form-item 
+       div.loginInputName
+        div.ant-col 
+        div.ant-form-item-label Email
+        div.ant-col 
+        div.ant-form-item-control
+          div.ant-form-item-control-input-content
+            div.loginInputNameDiv
+              div.ant-image
+                img(src='/images/mail.png' alt='mail' class="ant-image-img loginInputImg")
+                div.ant-image-mask
+                  div.ant-image-mask-info
+                    span.anticon 
+                    span.anticon-eye
+              input(type="email" name="email" class="ant-input loginInput" placeholder="Email")
+       div.password
+        input(type="password" name="password" placeholder="Password")
+       button(type="submit") Login
+       p
+        | not a member?
+        a(href="register") Sign Up now

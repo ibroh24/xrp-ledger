@@ -1,0 +1,78 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title home
+  link(rel='stylesheet' href='css/index.css')
+  link(rel='stylesheet' href='css/grid.css')
+
+body 
+  .container-fluid.mt-2
+    .row.flex-between.flex-y-center.vh-100
+      .col-lg-5
+        .text-ce
+          form.form.login__form(action="", method="post")
+            .form__layer
+              label(for='Email') Legal Name of Creator
+              input.form__input.rounded(type='text' name="legal_name" placeholder='Enter Name')
+            .form__layer
+              label(for='Email') Name of NFT Gallery or Collection
+              input.form__input.rounded(type='text' name="nft_gallery" placeholder='Enter Gallery or Collection Name')
+            .form__layer
+              label(for='Email') Name of NFT
+              input.form__input.rounded(type='text' name="nft_name" placeholder='Enter NFT Name')
+            .form__layer.row
+              label.d-inline-block.mr-2 Copyright conveyed?
+              label.d-inline-block(for='copyright1')
+                input#copyright1.control__switch(type='checkbox' name="copyright_conveyed")
+                //- span.form__switch No
+                span.form__switch Yes
+                  span.float-right No
+            .form__layer.row
+              label.d-inline-block.mr-2 Copyright conveyed?
+              label.d-inline-block(for='copyright2')
+                input#copyright2.control__switch(type='checkbox' name="copyright_conveyed2")
+                //- span.form__switch No
+                span.form__switch Yes
+                  span.float-right No 
+            .form__layer
+              label(for='Email') Secondary Royalities retained by Creator (optional)
+              input.form__input.rounded(type='text' name='secondary_royality' placeholder='If yes, enter percentage retained')
+            .form__layer
+              label(for='Email') Brief Description of NFT
+              input.form__input.rounded(type='text' name="description" placeholder='Enter Brief')
+            .form__layer
+              label(for='Email') Full Description of NFT
+              textarea.form__input.rounded(name='fulldescription' id='' rows='3')
+        
+      .col-lg-5.col-md-6
+        .login.w-lg-80
+          .text-center
+            img.login__logo(src='Images/XRPL Studio Logo.png' alt='')
+            .text-center.my-1
+              img(src='Images/imageUploadFirst.png' alt='')
+              span.mx-1
+              img(src='Images/imageUploadFirst.png' alt='')
+          .form.login__form
+            .form__layer
+              label(for='Email') Seceret Phrase (used to verify transfer)
+              input.form__input.rounded(type='text' placeholder='Enter Phrase')
+            .form__layer
+              label(for='Email') Mining Series
+              input.form__input.rounded(type='text' placeholder='1 of 1')
+            .form__layer.row
+              label.d-inline-block.mr-2 Select Mint Qty:
+              label.d-inline-flex.flex-y-center.mr-2(for='mint_qty')
+                input#mint_qty.control__radio(name='min_qty' type='radio')
+                span.form__radio
+                |                                 Single NFT
+              label.d-inline-flex.flex-y-center(for='mint_qty2')
+                input#mint_qty2.control__radio(name='min_qty' type='radio')
+                span.form__radio
+                |                                 Multiple NFTs
+            .form__layer.mt-2.text-center
+              a.btn.text-center(href='#')
+                img(src='Images/Group 713.png' alt='')
+              label(for='') Press to Mint
+    a.btn.btn-red.btn-exit.rounded(href='/logout') Exit

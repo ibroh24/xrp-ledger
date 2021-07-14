@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+    form(action="/auth_register", method="post")
+       div.label Registration form
+       hr
+       div.username
+        label(for="name") Name 
+        input(type="text" name="name" placeholder="Name" class="form-control")
+       div.email
+        label(for="email") Email 
+        input(type="email" name="email" placeholder="Email" class="form-control")
+       div.password
+        label(for="password") Password
+        input(type="password" placeholder="Password" name="password")
+       div.password
+        label(for="cpassword") Confirm Password
+        input(type="password" placeholder="Confirm Password" name="cpassword")
+       button(type="submit") Register
+       p
+        | a member?
+        a(href="/login") Sign In
